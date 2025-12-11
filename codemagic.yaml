@@ -1,0 +1,23 @@
+workflows:
+  android-release:
+    name: Build Android Release
+    max_build_duration: 60
+    environment:
+      node: "18"
+      java: "17"
+      groups:
+        - keystore_credentials
+      vars:
+        MYAPP_UPLOAD_STORE_FILE: keystore.jks
+        MYAPP_UPLOAD_KEY_ALIAS: upload
+    scripts:
+      - name: Install Node dependencies
+        script: |
+          npm install --legacy-peer-deps
+      - name: Build Android Release
+        script: |
+          cd android || exit 1
+          ./gradlew assembleRelease -x lint -Pandroid.injected.testOnly=false
+    artifacts:
+      - android/app/build/outputs/**/*.apk
+      - android/app/build/outputs/**/*.aab
