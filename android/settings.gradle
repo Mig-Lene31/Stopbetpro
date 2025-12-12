@@ -2,5 +2,8 @@ rootProject.name = 'StopBetPro'
 
 include ':app'
 
+/*
+ Use local implementation of react-native gradle plugin (android/react-native-gradle-plugin).
+ This prevents Gradle from trying to fetch a plugin without version from Maven.
+*/
 includeBuild("react-native-gradle-plugin")
-

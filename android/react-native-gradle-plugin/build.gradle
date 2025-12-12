@@ -1,21 +1,21 @@
 plugins {
-    id 'java-gradle-plugin'
+  id 'java-gradle-plugin'
 }
 
 gradlePlugin {
-    plugins {
-        reactNativePlugin {
-            id = "com.facebook.react"
-            implementationClass = "com.facebook.react.ReactNativeGradlePlugin"
-        }
+  plugins {
+    reactNativePlugin {
+      id = "com.facebook.react"
+      implementationClass = "com.facebook.react.ReactNativeGradlePlugin"
     }
+  }
 }
 
 repositories {
-    google()
-    mavenCentral()
+  google()
+  mavenCentral()
 }
 
 dependencies {
-    implementation "com.android.tools.build:gradle:7.4.2"
+  implementation "com.android.tools.build:gradle:7.4.2"
 }
