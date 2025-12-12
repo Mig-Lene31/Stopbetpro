@@ -1,20 +1,31 @@
 workflows:
-  android_debug:
-    name: Build Debug APK - StopBet
+  android-release:
+    name: Build Android Release
     max_build_duration: 60
     environment:
-      node: 18.18.0
-      java: 17
       vars:
-        ANDROID_HOME: /opt/android-sdk-linux
+        PACKAGE_NAME: "com.stopbetpro"
+      java: 17
+      node: 18
+      npm: default
+      android_signing:
+        - stopbetpro_keystore
+
     scripts:
-      - name: Install deps
+      - name: Instalar dependências
         script: |
-          npm ci --legacy-peer-deps
-      - name: Build Debug APK
+          npm install
+
+      - name: Limpar build antiga
         script: |
           cd android
-          chmod +x ./gradlew
-          ./gradlew assembleDebug --no-daemon
+          ./gradlew clean
+
+      - name: Gerar APK Release
+        script: |
+          cd android
+          ./gradlew assembleRelease --no-daemon
+
     artifacts:
       - android/app/build/outputs/**/*.apk
+      - android/app/build/outputs/**/*.aab
