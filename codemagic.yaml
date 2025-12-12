@@ -6,9 +6,9 @@ workflows:
     environment:
       vars:
         ANDROID_HOME: /opt/android-sdk-linux
-      flutter: none
       node: 18.18.0
       java: 17
+      # Removemos totalmente o "flutter:" para não ativar ambiente Flutter
 
     scripts:
       - name: Install Node dependencies
