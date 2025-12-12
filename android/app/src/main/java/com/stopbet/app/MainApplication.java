@@ -1,4 +1,4 @@
-package com.stopbetpro;
+package com.stopbet.app;
 
 import android.app.Application;
 import com.facebook.react.ReactApplication;

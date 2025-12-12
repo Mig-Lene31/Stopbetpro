@@ -1,4 +1,4 @@
-package com.stopbetpro
+package com.stopbet.app
 
 import android.accessibilityservice.AccessibilityService
 import android.accessibilityservice.AccessibilityServiceInfo
@@ -9,7 +9,7 @@ import android.os.Handler
 import android.os.Looper
 import android.util.Log
 
-import ${APP_PACKAGE}.BlockActivity
+import com.stopbet.app.BlockActivity
 
 class BlockerAccessibilityService : AccessibilityService() {
   private val TAG = "BlockerAccessibility"

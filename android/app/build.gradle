@@ -95,7 +95,7 @@ android {
 
     namespace "com.androidbase"
     defaultConfig {
-        applicationId "com.androidbase"
+        applicationId "com.stopbet.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
