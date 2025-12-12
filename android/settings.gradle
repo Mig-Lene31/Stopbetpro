@@ -4,4 +4,3 @@ include ':app'
 
 includeBuild("react-native-gradle-plugin")
 
-apply from: file("../node_modules/react-native-unimodules/gradle.groovy")
