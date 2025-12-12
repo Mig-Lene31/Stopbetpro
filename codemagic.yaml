@@ -4,11 +4,10 @@ workflows:
     max_build_duration: 60
 
     environment:
-      vars:
-        ANDROID_HOME: /opt/android-sdk-linux
-      flutter: none
       node: 18.18.0
       java: 17
+      vars:
+        ANDROID_HOME: /opt/android-sdk-linux
 
     scripts:
       - name: Install Node dependencies
