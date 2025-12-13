@@ -1,1 +1,9 @@
-node_modules
+node_modules/
+android/.gradle/
+android/build/
+android/app/build/
+
+*.zip
+*.tar.gz
+*.b64
+*.txt
