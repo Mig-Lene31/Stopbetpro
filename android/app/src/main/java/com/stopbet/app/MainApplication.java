@@ -1,13 +1,12 @@
 package com.stopbet.app;
 
 import android.app.Application;
+import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
-import com.facebook.react.ReactHost;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
 import java.util.List;
-import com.facebook.react.PackageList;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -19,7 +18,8 @@ public class MainApplication extends Application implements ReactApplication {
 
         @Override
         protected List<ReactPackage> getPackages() {
-            List<ReactPackage> packages = new PackageList(this).getPackages();
+            List<ReactPackage> packages = new PackageList(MainApplication.this).getPackages();
+            packages.add(new BlockerPackage());  // registra seu módulo nativo
             return packages;
         }
 

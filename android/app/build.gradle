@@ -93,7 +93,7 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.androidbase"
+    namespace "com.stopbet.app"
     defaultConfig {
         applicationId "com.stopbet.app"
         minSdkVersion rootProject.ext.minSdkVersion
