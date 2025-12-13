@@ -2,30 +2,21 @@ workflows:
   android-release:
     name: Build Android Release
     max_build_duration: 60
+
     environment:
-      vars:
-        PACKAGE_NAME: "com.stopbetpro"
       java: 17
       node: 18
       npm: default
-      android_signing:
-        - stopbetpro_keystore
 
     scripts:
-      - name: Instalar dependências
+      - name: Install dependencies
         script: |
           npm install
 
-      - name: Limpar build antiga
-        script: |
-          cd android
-          ./gradlew clean
-
-      - name: Gerar APK Release
+      - name: Build Android APK
         script: |
           cd android
           ./gradlew assembleRelease --no-daemon
 
     artifacts:
-      - android/app/build/outputs/**/*.apk
-      - android/app/build/outputs/**/*.aab
+      - android/app/build/outputs/apk/release/*.apk
